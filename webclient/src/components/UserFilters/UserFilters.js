@@ -149,6 +149,7 @@ export default class UserFilters extends Component {
 						<h2>Filter:</h2>
 					</div>
 					<div>
+						{/* I chose a multiselect here instead of radio buttons because I changed the spec a little, happy to re-do this if you like */}
 						<div className={cx('select-wrap')}>
 							<SelectInput
 								options={filterOptions}
