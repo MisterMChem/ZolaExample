@@ -24,12 +24,18 @@
 }
 
 .loader-wrap {
-
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .empty-wrap {
 	padding: 20px;
+
+	p {
+		display: inline-block;
+	}
 }
+
 .user-tile-wrap {
 	width: 100%;
 	display: inline-block;
