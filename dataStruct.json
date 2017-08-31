@@ -1,0 +1,82 @@
+//ImageContentBlock
+{
+	"width": 100,
+	"height": 100,
+
+	"shape": "auto|circle|square", //default to auto
+	"images": {
+		"portrait": {
+			"src": "/cloudinarypath.jpg",
+			"alt": "Alt text for portrait",
+			"topLeft": [12.0, 12.0],
+			"bottomRight": [100.0, 100.0]
+		},
+		"landscape": {
+			"src": "/cloudinarypath.jpg",
+			"alt": "Alt text for landscape",
+			"topLeft": [12.0, 12.0],
+			"bottomRight": [200.0, 100.0]
+		}
+	}
+}
+
+//DirectedImage
+{
+	"width": 100,
+	"height": 100,
+	"images": {
+		"portrait": {
+			"src": "/cloudinarypath.jpg",
+			"alt": "Alt text for portrait",
+			"topLeft": [12.0, 12.0],
+			"bottomRight": [100.0, 100.0]
+		},
+		"landscape": {
+			"src": "/cloudinarypath.jpg",
+			"alt": "Alt text for landscape",
+			"topLeft": [12.0, 12.0],
+			"bottomRight": [200.0, 100.0]
+		}
+	}
+}
+
+
+//VariantImage
+{
+	"id": "id to associate with content",
+	"variants": {
+		"hero": DirectedImage,
+		"listing": DirectedImage
+	}
+}
+
+//Variant Config
+  "config": {
+    "variants": {
+        "hero": {
+            "id": "hero",
+            "name": "Hero",
+            "description": "...",
+            "aspectRatio": 1.8
+        },
+        "listing" : {
+            "id": "listing",
+            "name": "Listing",
+            "description": "...",
+            "aspectRatio": 1.2
+        },
+        "square" : {
+            "id": "square",
+            "name": "Square",
+            "description": "...",
+            "aspectRatio": 1.0
+        },
+        "circle": {
+            "id": "circle",
+            "name": "Circle",
+            "description": "...",
+            "aspectRatio": 1.0
+        }
+        ...
+    }
+  }

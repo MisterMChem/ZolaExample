@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "socicon";
+    src: url("socicon.eot");
+    src: url("socicon.eot?#iefix") format("embedded-opentype"),
+         url("socicon.woff2") format("woff2"),
+         url("socicon.woff") format("woff"),
+         url("socicon.ttf") format("ttf"),
+         url("socicon.svg#socicon") format("svg");
+    font-style: normal;
+    font-weight: 300;
+}

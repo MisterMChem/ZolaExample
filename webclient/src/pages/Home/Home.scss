@@ -1,0 +1,42 @@
+// You'll see this import in many places. We alias this in the webpack configuration for convenience.
+@import 'componentImport';
+
+.content {
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+
+	@include breakpoint-md {
+		padding: 70px;
+	}
+}
+
+.button-wrap {
+	width: 30%;
+	margin-left: 35%;
+	text-align: center;
+}
+
+.text-wrap {
+	width: 50%;
+	margin-left: 25%;
+	text-align: center;
+}
+
+.loader-wrap {
+
+}
+
+.empty-wrap {
+	padding: 20px;
+}
+.user-tile-wrap {
+	width: 100%;
+	display: inline-block;
+	vertical-align: top;
+	padding: 15px;
+
+	@include breakpoint-md {
+		width: (1/3) * 100%;
+	}
+}

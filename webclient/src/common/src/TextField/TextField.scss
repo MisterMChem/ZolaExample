@@ -1,0 +1,12 @@
+@import 'componentImport';
+
+.fieldSizer {
+	width: 50%;
+	
+	&.full {
+		width: 100%;
+	}
+}
+.error {
+	border: 1px solid $brand-danger;
+}

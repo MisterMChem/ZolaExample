@@ -1,0 +1,34 @@
+@import 'componentImport';
+
+.user-tile-wrap {
+	border: 2px solid black;
+	text-align: center;
+	color: black;
+
+	&.priority-1 {
+		background: $brand-orange;
+	}
+	&.priority-2 {
+		background: $brand-green;
+	}
+
+	&.priority-3 {
+		background: $brand-blue;
+	}
+	&.priority-4 {
+		background: $brand-purple;
+	}
+
+	h2 {
+		font-size: 16px;
+		font-weight: 600;
+	}
+
+	p {
+		font-size: 12px;
+
+		&.user-age {
+			font-style: italic;
+		}
+	}
+}

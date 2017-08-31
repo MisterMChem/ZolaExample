@@ -1,0 +1,39 @@
+@import 'componentImport';
+
+.user-filters {
+
+	color: $gray-dark;
+
+	.sorts-wrap {
+		display: inline-block;
+		vertical-align: top;
+		width: 50%;
+		padding: 15px;
+
+		@include breakpoint-md {
+			width: 40%;
+		}
+
+		> div {
+			display: inline-block;
+			vertical-align: middle;
+			width: 100%;
+
+			@include breakpoint-md {
+				width: auto;
+			}
+		}
+
+		h2 {
+			margin-right: 10px;
+		}
+
+		.select-wrap {
+			width: 100%;
+
+			@include breakpoint-md {
+				width: 250px
+			}
+		}
+	}
+}

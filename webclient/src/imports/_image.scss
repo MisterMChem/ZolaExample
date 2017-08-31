@@ -1,0 +1,108 @@
+$breakpoints: (
+	xs: 0px,
+	sm: 768px,
+	md: 992px,
+	lg: 1200px
+);
+
+$breakpoint-to-width: (
+		xs: 564,
+		sm: 1152,
+		md: 1488,
+		lg: 1800
+);
+
+$use-to-divider: (
+	full: 1,
+	half: 2,
+	third: 3,
+	quarter: 4
+);
+
+@function list-to-bp-map($list) {
+	$list-length: length($list);
+
+  @return (
+		xs: nth($list, 1),
+		sm: nth($list, min(2, $list-length)),
+		md: nth($list, min(3, $list-length)),
+		lg: nth($list, min(4, $list-length))
+	);
+}
+
+@function to-bp-map($value) {
+	@if type-of($value) == string {
+		@return list-to-bp-map(($value,));
+	} @else {
+		@return list-to-bp-map($value);
+	}
+}
+@mixin responsive-bg-image($path, $format, $use) {
+
+    @include responsive-bg-image-base($path, $format, $use, 'landscape');
+
+    @media only screen and (orientation: portrait) {
+        @include responsive-bg-image-base($path, $format, $use, 'portrait');
+    }
+}
+
+@mixin responsive-bg-image-base($path, $format, $use, $orientation) {
+	@include responsive-bg-image-base-v2($path, $format, $use, $orientation);
+}
+
+@mixin responsive-bg-image-base-v2($path, $format, $use, $orientation) {
+    $use-map: to-bp-map($use);
+		$size: ();
+
+		@each $bp-name, $bp-use in $use-map {
+			$size: append($size, map-get($breakpoint-to-width, $bp-name) / map-get($use-to-divider, $bp-use));
+		}
+
+		@include responsive-bg-image-auto-base($path, $size, $orientation);
+}
+
+@mixin responsive-bg-image-base-v1($path, $format, $use, $orientation) {
+
+		$use-map: to-bp-map($use);
+
+    @if $orientation == 'landscape' {
+    	$orientation: '';
+    } @else {
+    	$orientation: '-portrait';
+    }
+
+    @each $bp-name, $bp-size in $breakpoints {
+			$use-resolved: map-get($use-map, $bp-name);
+
+        @media only screen and (min-width: #{$bp-size}) {
+					background-image: url(https://res.cloudinary.com/linkakc/image/upload/t_web_linkakc_#{$bp-name}_#{$use-resolved}#{$path}#{$orientation}.#{$format});
+        }
+    }
+}
+
+@mixin responsive-bg-image-auto($path, $size) {
+
+    @include responsive-bg-image-auto-base($path, $size, 'landscape');
+
+    @media only screen and (orientation: portrait) {
+        @include responsive-bg-image-auto-base($path, $size, 'portrait');
+    }
+}
+
+@mixin responsive-bg-image-auto-base($path, $size, $orientation) {
+    $size-map: to-bp-map($size);
+
+    @if $orientation == 'landscape' {
+    	$orientation: '';
+    } @else {
+    	$orientation: '-portrait';
+    }
+
+    @each $bp-name, $bp-size in $breakpoints {
+        $size-resolved: map-get($size-map, $bp-name);
+
+        @media only screen and (min-width: #{$bp-size}) {
+            background-image: url(https://res.cloudinary.com/linkakc/image/upload/c_limit,f_auto,fl_progressive,w_#{$size-resolved}#{$path}#{$orientation});
+        }
+    }
+}

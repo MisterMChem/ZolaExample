@@ -1,0 +1,7 @@
+@import 'componentImport';
+
+.login-form {
+	.error {
+		color: $brand-danger;
+	}
+}

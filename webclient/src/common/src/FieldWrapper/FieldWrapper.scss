@@ -1,0 +1,15 @@
+.formGroup {
+	margin-bottom: 10px;
+
+	label {
+		width: 30%;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.childWrap {
+		display: inline-block;
+		vertical-align: top;
+		width: 70%;
+	}
+}

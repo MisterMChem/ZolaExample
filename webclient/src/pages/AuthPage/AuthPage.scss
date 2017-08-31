@@ -1,0 +1,22 @@
+@import 'componentImport';
+.auth-page {
+	padding: 10px;
+	color: $gray-dark;
+
+	@include breakpoint-md {
+		padding: 10px 70px;
+	}
+
+	.image-wrap {
+		width: 100%;
+
+		@include breakpoint-md {
+			width: 40%;
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+
+}

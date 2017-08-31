@@ -1,0 +1,52 @@
+{
+	"env":
+	{
+		"development":
+		{
+			"presets":
+			[
+				"react",
+				"es2015",
+				"stage-0"
+			],
+			
+			"plugins":
+			[
+				"transform-runtime",
+				"transform-react-display-name"
+			]
+		},
+		"commonjs":
+		{
+			"presets":
+			[
+				"react",
+				"es2015",
+				"stage-0"
+			],
+			
+			"plugins":
+			[
+				"transform-runtime",
+				"transform-react-display-name",
+				"transform-decorators-legacy"
+			]
+		},
+		"es6":
+		{
+			"presets":
+			[
+				"react",
+				["es2015", { modules: false }],
+				"stage-0"
+			],
+			
+			"plugins":
+			[
+				"transform-runtime",
+				"transform-react-display-name",
+				"transform-decorators-legacy"
+			]
+		}
+	}
+}
